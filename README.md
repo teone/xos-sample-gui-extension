@@ -2,21 +2,24 @@
 
 ## Demo
 
-### Create the extension container
+To run this demo we suggest to setup `xos` using the `Vagrant` VM provided in the `fronted` configuration.
 
-`docker build -t xosproject/xos-sample-gui-extension .`
+### Setup the extension container
 
-### Start the extension container
+Run `make` from this folder.
 
-`docker run -p 4001:4000 -d xosproject/xos-sample-gui-extension`
+> This command will build the container image and spin it up.
 
 ### Send an event to load this extension in the main app
 
-`PUBLISH Onboard '{"files": ["http://xos.dev:4001/spa/vendor.js", "http://xos.dev:4001/spa/app.js"]}'`
+Run `make onboard`
 
-_Check that your files are available at the provided url_
+>This command assume that:
+> - `redis-cli` is installed on your system
+> - you have `xos.dev` pointing to the `frontend` vagrant vm
 
 ## TODO:
 
-[ ] Provide a dev environment
-[ ] Define the Event format
+- [ ] Provide a dev environment
+- [ ] Define the Event format
+- [ ] Persist onboarded apps (Client or server side?)
