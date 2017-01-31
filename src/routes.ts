@@ -12,22 +12,6 @@ function routesConfig($stateProvider: angular.ui.IStateProvider, $locationProvid
     .state('xos.xos-sample-gui-extension.example-route', {
       url: '/example-route',
       parent: 'xos.xos-sample-gui-extension',
-      template: `
-      <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xs-12">
-              <h1>Xos Sample GUI Extension</h1>
-            </div>
-            <div class="col-xs-12">
-              <p>This page is loaded from an external container!</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      `,
-      controller: () => {
-        console.log('ss');
-      }
+      component: `demo`
     });
 }

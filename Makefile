@@ -16,4 +16,7 @@ rm:
 	docker rm $(CONTAINER_NAME)
 
 rmi:
-	rmi $(CONTAINER_IMAGE_NAME)
+	docker rmi $(CONTAINER_IMAGE_NAME)
+
+enter:
+	docker exec -it $(CONTAINER_NAME) bash
