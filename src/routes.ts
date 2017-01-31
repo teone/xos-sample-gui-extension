@@ -12,6 +12,6 @@ function routesConfig($stateProvider: angular.ui.IStateProvider, $locationProvid
     .state('xos.xos-sample-gui-extension.example-route', {
       url: '/example-route',
       parent: 'xos.xos-sample-gui-extension',
-      component: `demo`
+      component: 'demo'
     });
 }
