@@ -21,7 +21,8 @@ angular.module('xos-sample-gui-extension', [
     $log: ng.ILogService,
     $state: ng.ui.IStateService,
     NavigationService: any,
-    XosComponentInjector: any) {
+    XosComponentInjector: any,
+    XosKeyboardShortcut: any) {
     $log.info('[xos-sample-gui-extension] App is running');
 
     NavigationService.add({
@@ -36,4 +37,13 @@ angular.module('xos-sample-gui-extension', [
       '',
       false
     );
+
+    console.log('add shortcut global');
+    XosKeyboardShortcut.registerKeyBinding({
+        key: 'd',
+        description: 'Alert popup',
+        cb: () => {
+          alert('This binding is provided by the "xos-sample-gui-extension"');
+        },
+      }, 'global');
   });
